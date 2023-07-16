@@ -3,19 +3,7 @@
 import sys
 import string
 
-f = open('test.txt')  
-
-lineNum = 0
-
-words = []
-for line in f:
-	lineNum += 1
-	#print(line)
-	words2 = line.split()  
-	for word in words2:
-		words.append(word)
-f.close()
-
+words = sys.stdin.read().split()
 d = dict()
 for word in words:
 	t = word.translate(str.maketrans('','',string.punctuation)).upper()
